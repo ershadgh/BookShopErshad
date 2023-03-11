@@ -1,0 +1,69 @@
+﻿@model BookShop.Models.ViewModels.BooksIndexViewModel
+@{
+    ViewData["Title"] = "SearcheByIsbn";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>SearcheByIsbn</h2>
+
+<div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="bg-light card-header">
+            جستجو براساس شابک
+        </div>
+        <div class="card-body">
+            <div class="col-md-12 form-group">
+                <form action="SearcheByIsbn">
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            .....
+                             <input name="ISBN"  class="form-control form-group" placeholder="شابک کتاب را وارد کنید" />
+                        </div>
+                        <div class="col-md-6">
+                            
+                        <input  type="submit" class="btn btn-primary form-group float-right"  value="جستجو"/>
+                        </div>
+                    </div>
+                   
+                </form>
+            </div>
+            @if(ViewBag.Msq!=null)
+            {
+                     <div class="alert alert-danger alert-dismissable">
+                @ViewBag.Msg
+                <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                    <span ariaaria-hidden="true" >&times;</span>
+                </button>
+            </div>
+                }
+                else
+                {
+                    <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label asp-for="Title"></label>
+                        <input asp-for="Title" class="form-control" disabled />
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label asp-for="Author"></label>
+                        <input asp-for="Author" class="form-control" disabled />
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label asp-for="Translatorr"></label>
+                        <input asp-for="Translatorr" class="form-control" disabled />
+                    </div>
+                    <div class="col-md-6 form-group">
+                     <label asp-for="category"></label>
+                       <input asp-for="category" class="form-control" disabled />
+                    </div>
+                </div>            
+            </div>
+ 
+                }
+               
+        </div>
+      </div>
+    </div>
+
+</div>
